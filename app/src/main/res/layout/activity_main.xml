@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_layout"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="me.jorgev.itunes.MainActivity"
     android:weightSum="1">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/query_box"
-        android:hint="Search for Music"
-        android:gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:hint="@string/query_box_hint"
+        android:gravity="center_horizontal" />
 
-    <Button
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/query_buttons_layout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_btn_text"
+            android:id="@+id/search_button"
+            android:onClick="onSearchButton"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/advanced_search_btn"
+            android:layout_alignParentRight="true"
+            android:id="@+id/advanced_button"
+            android:onClick="onAdvancedButton" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LET&apos;S GO"
-        android:id="@+id/search_button"
-        android:onClick="onSearchButton"
-        android:layout_below="@+id/query_box"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/advanced_form_anchor">
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

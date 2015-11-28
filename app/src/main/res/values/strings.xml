@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">iTunes</string>
     <string name="test_pic">smuLogo</string>
+    <string name="query_box_hint">Search for Music</string>
+    <string name="search_btn_text">LET\'S GO</string>
+    <string name="advanced_search_btn">Advanced</string>
+    <string name="filter_search_label">Filter Search</string>
 </resources>
