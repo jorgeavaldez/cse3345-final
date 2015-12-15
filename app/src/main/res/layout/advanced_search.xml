@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:paddingTop="10dp">
 
@@ -47,12 +47,153 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/result_type"
                 android:spinnerMode="dropdown"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/result_type_label" />
+                android:layout_below="@+id/result_type_label"
+                android:layout_alignParentStart="true" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/relativeLayout">
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout2"
+        android:layout_above="@+id/form_rel_layout">
+    </RelativeLayout>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></RadioGroup>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result_type2"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="226dp"
+        android:layout_below="@+id/form_rel_layout"
+        android:layout_toEndOf="@+id/layout2" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optiona"
+        android:layout_below="@+id/form_rel_layout"
+        android:layout_toEndOf="@+id/layout2"
+        android:text="Actor"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movie Title"
+        android:id="@+id/radioButton"
+        android:checked="false"
+        android:layout_below="@+id/optiona"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:id="@+id/radioButton2"
+        android:checked="false"
+        android:layout_below="@+id/radioButton"
+        android:layout_toEndOf="@+id/layout2" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artist"
+        android:id="@+id/radioButton3"
+        android:layout_below="@+id/radioButton2"
+        android:layout_toEndOf="@+id/layout2"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Album"
+        android:id="@+id/radioButton4"
+        android:checked="false"
+        android:layout_below="@+id/radioButton3"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Song"
+        android:id="@+id/radioButton5"
+        android:layout_below="@+id/radioButton4"
+        android:layout_toEndOf="@+id/layout2"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Title"
+        android:id="@+id/radioButton6"
+        android:layout_below="@+id/form_rel_layout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="67dp"
+        android:checked="false" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music Video"
+        android:id="@+id/radioButton7"
+        android:checked="false"
+        android:layout_alignTop="@+id/radioButton"
+        android:layout_alignStart="@+id/radioButton6" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Software"
+        android:id="@+id/radioButton8"
+        android:checked="false"
+        android:layout_below="@+id/radioButton7"
+        android:layout_alignStart="@+id/radioButton7" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Episode"
+        android:id="@+id/radioButton9"
+        android:checked="false"
+        android:layout_above="@+id/radioButton5"
+        android:layout_alignStart="@+id/radioButton11" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Season"
+        android:id="@+id/radioButton10"
+        android:checked="false"
+        android:layout_above="@+id/radioButton9"
+        android:layout_alignStart="@+id/radioButton9" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podcast"
+        android:id="@+id/radioButton11"
+        android:layout_below="@+id/radioButton9"
+        android:layout_alignStart="@+id/radioButton7"
+        android:checked="false" />
+
+</RelativeLayout>
 
 </ScrollView>
 

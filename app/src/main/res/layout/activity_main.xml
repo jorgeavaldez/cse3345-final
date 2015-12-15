@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
@@ -29,12 +29,7 @@
         android:orientation="vertical"
         android:layout_alignParentEnd="false">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/advanced_form_anchor">
 
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -61,17 +56,35 @@
 
     </LinearLayout>
 
-    <LinearLayout android:id="@+id/footer" android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/button_container"
+        android:layout_height="wrap_content">
 
-        <Button android:id="@+id/saveButton" android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_weight="1"
-            android:text="Dank Memes" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <Button android:id="@+id/cancelButton" android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_weight="1"
-            android:text="More Memes" />
-    </LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/advanced_form_anchor">
 
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <Button android:id="@+id/cancelButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More Memes"
+            android:layout_gravity="right"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button android:id="@+id/saveButton" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="0.06"
+            android:text="Dank Memes"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
 </RelativeLayout>
+</LinearLayout>

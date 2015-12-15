@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         advancedViewShowing = false;
-        advancedViewRoot = (RelativeLayout) findViewById(R.id.main_layout);
+        advancedViewRoot = (RelativeLayout) findViewById(R.id.advanced_form_anchor);
         advancedSettingsView = getLayoutInflater().inflate(R.layout.advanced_search, null);
     }
 
