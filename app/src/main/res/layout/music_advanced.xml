@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"></LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Artist"
+            android:id="@+id/artist_music"
+            android:layout_below="@+id/title_music"
+            android:layout_alignStart="@+id/price_music" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Title"
+            android:id="@+id/title_music"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/artist_music" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Explicit"
+            android:id="@+id/explicit_music"
+            android:layout_above="@+id/rating_music"
+            android:layout_alignStart="@+id/genre_music" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Price"
+            android:id="@+id/price_music"
+            android:layout_below="@+id/genre_music"
+            android:layout_toStartOf="@+id/rating_music"
+            android:layout_marginEnd="36dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ratings"
+            android:id="@+id/rating_music"
+            android:layout_above="@+id/title_music"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sescription"
+            android:id="@+id/Description_music"
+            android:layout_below="@+id/price_music"
+            android:layout_toStartOf="@+id/genre_music" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Genre"
+            android:id="@+id/genre_music"
+            android:layout_below="@+id/artist_music"
+            android:layout_alignEnd="@+id/price_music" />
+
+        <ImageView
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:id="@+id/imageView"
+            android:layout_below="@+id/rating_music"
+            android:layout_toEndOf="@+id/rating_music" />
+
+    </RelativeLayout>
+</LinearLayout>
