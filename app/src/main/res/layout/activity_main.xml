@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
@@ -12,41 +12,66 @@
     tools:context="me.jorgev.itunes.MainActivity"
     android:weightSum="1">
 
+
+
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/query_box"
         android:hint="@string/query_box_hint"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_alignParentStart="false" />
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/button_anchor_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/query_buttons_layout">
+        android:orientation="vertical"
+        android:layout_alignParentEnd="false">
 
-        <Button
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/search_btn_text"
-            android:id="@+id/search_button"
-            android:onClick="onSearchButton"
-            android:layout_alignParentLeft="true" />
+            android:id="@+id/advanced_form_anchor">
 
-        <Button
-            android:layout_width="wrap_content"
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/advanced_search_btn"
-            android:layout_alignParentRight="true"
-            android:id="@+id/advanced_button"
-            android:onClick="onAdvancedButton" />
-    </RelativeLayout>
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/query_buttons_layout">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/advanced_form_anchor">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search_btn_text"
+                android:id="@+id/search_button"
+                android:onClick="onSearchButton"
+                android:layout_alignParentLeft="true" />
 
-    </RelativeLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/advanced_search_btn"
+                android:layout_alignParentRight="true"
+                android:id="@+id/advanced_button"
+                android:onClick="onAdvancedButton" />
+        </RelativeLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/footer" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button android:id="@+id/saveButton" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Dank Memes" />
+
+        <Button android:id="@+id/cancelButton" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="More Memes" />
+    </LinearLayout>
+
+</RelativeLayout>

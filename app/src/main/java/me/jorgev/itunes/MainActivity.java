@@ -18,7 +18,7 @@ import hugo.weaving.DebugLog;
 public class MainActivity extends AppCompatActivity {
 
     public boolean advancedViewShowing;
-    public LinearLayout advancedViewRoot;
+    public RelativeLayout advancedViewRoot;
     View advancedSettingsView;
 
     @Override
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         advancedViewShowing = false;
-        advancedViewRoot = (LinearLayout) findViewById(R.id.main_layout);
+        advancedViewRoot = (RelativeLayout) findViewById(R.id.main_layout);
         advancedSettingsView = getLayoutInflater().inflate(R.layout.advanced_search, null);
     }
 
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, spinnerItems);
         s.setAdapter(adapter);
 
-        String imageURL = "http://i.giphy.com/yShdlgJ3ZVdVm.gif";
-
-        ImageView imageView = (ImageView) findViewById(R.id.cheeseburger_img);
-
-        Glide.with(this).load(imageURL).into(imageView);
+//        String imageURL = "http://i.giphy.com/yShdlgJ3ZVdVm.gif";
+//
+//        ImageView imageView = (ImageView) findViewById(R.id.cheeseburger_img);
+//
+//        Glide.with(this).load(imageURL).into(imageView);
     }
 }
