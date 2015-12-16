@@ -128,6 +128,8 @@ extends AsyncTask<String, Double, Media[]> {
                 ctx.startActivity(intent);
             }
         });
+
+        lv.setAdapter(mediaAdapter);
     }
 
     public String convertToString(InputStream inputStream) throws IOException {

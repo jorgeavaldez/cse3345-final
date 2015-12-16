@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         advancedViewShowing = false;
         advancedViewRoot = (RelativeLayout) findViewById(R.id.advanced_form_anchor);
-        advancedSettingsView = getLayoutInflater().inflate(R.layout.advanced_search, null);
+        //advancedSettingsView = getLayoutInflater().inflate(R.layout.advanced_search, null);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -79,34 +79,34 @@ public class MainActivity extends AppCompatActivity {
 
     // This function is the callback for when the advanced search options button is called.
     // It should inflate the 'advanced_search' layout under the buttons and all that jazz.
-    @DebugLog
-    public void onAdvancedButton(View target) {
-        if (!this.advancedViewShowing) {
-            advancedViewRoot.addView(advancedSettingsView);
-            initSpinner();
-
-            this.advancedViewShowing = true;
-        } else {
-            advancedViewRoot.removeView(advancedSettingsView);
-            this.advancedViewShowing = false;
-        }
-    }
-
-    @DebugLog
-    public void initSpinner() {
-        String[] spinnerItems = new String[]{"Artist", "Track", "Album", "Video", "Mix", "Song"};
-
-        Spinner s = (Spinner) findViewById(R.id.result_type);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                R.layout.support_simple_spinner_dropdown_item, spinnerItems);
-        s.setAdapter(adapter);
-
-//        String imageURL = "http://i.giphy.com/yShdlgJ3ZVdVm.gif";
+//    @DebugLog
+//    public void onAdvancedButton(View target) {
+//        if (!this.advancedViewShowing) {
+//            advancedViewRoot.addView(advancedSettingsView);
+//            initSpinner();
 //
-//        ImageView imageView = (ImageView) findViewById(R.id.cheeseburger_img);
+//            this.advancedViewShowing = true;
+//        } else {
+//            advancedViewRoot.removeView(advancedSettingsView);
+//            this.advancedViewShowing = false;
+//        }
+//    }
+
+//    @DebugLog
+//    public void initSpinner() {
+//        String[] spinnerItems = new String[]{"Artist", "Track", "Album", "Video", "Mix", "Song"};
 //
-//        Glide.with(this).load(imageURL).into(imageView);
-    }
+//        Spinner s = (Spinner) findViewById(R.id.result_type);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+//                R.layout.support_simple_spinner_dropdown_item, spinnerItems);
+//        s.setAdapter(adapter);
+//
+////        String imageURL = "http://i.giphy.com/yShdlgJ3ZVdVm.gif";
+////
+////        ImageView imageView = (ImageView) findViewById(R.id.cheeseburger_img);
+////
+////        Glide.with(this).load(imageURL).into(imageView);
+//    }
 
 
 //    public void setAttribute(int position, View convertView, ViewGroup parent) {

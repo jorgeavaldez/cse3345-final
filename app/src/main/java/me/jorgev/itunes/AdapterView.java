@@ -29,7 +29,7 @@ public class AdapterView extends AppCompatActivity {
         }
 
         Log.d("intent msg string", i.getExtras().getString("SELECTED_BOOK_JSON"));
-        setContentView(R.layout.book_advanced);
+        //setContentView(R.layout.activity_main);
 
         TextView bviewTitle = (TextView)findViewById(R.id.title_podcast);
         TextView bartistTitle = (TextView)findViewById(R.id.artist_podcast);
