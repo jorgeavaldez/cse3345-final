@@ -96,7 +96,7 @@
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Movie Title"
+        android:text="Title"
         android:id="@+id/radioButton"
         android:checked="false"
         android:layout_below="@+id/optiona"
