@@ -46,4 +46,5 @@ dependencies {
     //compile('com.jakewharton.hugo:hugo-plugin:1.2.1'){force = true}
     compile('com.github.bumptech.glide:glide:3.6.1') { force = true }
     compile 'com.google.code.gson:gson:2.5'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
