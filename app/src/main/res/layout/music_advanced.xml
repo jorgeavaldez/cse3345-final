@@ -11,17 +11,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="right">
+        android:layout_height="match_parent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Artist"
-            android:id="@+id/artist_music"
+            android:text="artist"
+            android:id="@+id/developer_music"
             android:layout_below="@+id/title_music"
-            android:layout_alignStart="@+id/price_music" />
+            android:layout_toStartOf="@+id/explicit_music" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +29,7 @@
             android:text="Title"
             android:id="@+id/title_music"
             android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/artist_music" />
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,8 +37,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Explicit"
             android:id="@+id/explicit_music"
-            android:layout_above="@+id/rating_music"
-            android:layout_alignStart="@+id/genre_music" />
+            android:layout_above="@+id/developer_music"
+            android:layout_toEndOf="@+id/genre_music" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,24 +46,24 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Price"
             android:id="@+id/price_music"
-            android:layout_below="@+id/genre_music"
-            android:layout_toStartOf="@+id/rating_music"
-            android:layout_marginEnd="36dp" />
+            android:layout_below="@+id/rating_music"
+            android:layout_alignEnd="@+id/title_music" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ratings"
             android:id="@+id/rating_music"
-            android:layout_above="@+id/title_music"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/genre_music"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sescription"
             android:id="@+id/Description_music"
+            android:layout_marginTop="41dp"
             android:layout_below="@+id/price_music"
-            android:layout_toStartOf="@+id/genre_music" />
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,15 +71,25 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Genre"
             android:id="@+id/genre_music"
-            android:layout_below="@+id/artist_music"
-            android:layout_alignEnd="@+id/price_music" />
+            android:layout_below="@+id/album_music"/>
 
         <ImageView
             android:layout_width="150px"
             android:layout_height="150px"
             android:id="@+id/imageView"
-            android:layout_below="@+id/rating_music"
-            android:layout_toEndOf="@+id/rating_music" />
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="94dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="album"
+            android:id="@+id/album_music"
+            android:layout_below="@+id/developer_music"
+            android:layout_alignStart="@+id/developer_music" />
+
 
     </RelativeLayout>
 </LinearLayout>

@@ -18,19 +18,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="actor"
+            android:text="Actor"
             android:id="@+id/actor_movie"
             android:layout_below="@+id/title_movie"
-            android:layout_alignStart="@+id/price_movie" />
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="title"
+            android:text="Title"
             android:id="@+id/title_movie"
             android:layout_alignParentTop="true"
-            android:layout_alignEnd="@+id/actor_movie" />
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,8 +38,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Explicit"
             android:id="@+id/explicit_movie"
-            android:layout_above="@+id/rating_movie"
-            android:layout_alignStart="@+id/genre_movie" />
+            android:layout_above="@+id/actor_movie"
+            android:layout_toEndOf="@+id/genre_movie" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,24 +47,23 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Price"
             android:id="@+id/price_movie"
-            android:layout_below="@+id/genre_movie"
-            android:layout_toStartOf="@+id/rating_movie"
-            android:layout_marginEnd="36dp" />
+            android:layout_below="@+id/rating_movie"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ratings"
             android:id="@+id/rating_movie"
-            android:layout_above="@+id/title_movie"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@+id/genre_movie"
+            android:layout_alignEnd="@+id/genre_movie" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sescription"
+            android:text="Description"
             android:id="@+id/Description_movie"
             android:layout_below="@+id/price_movie"
-            android:layout_toStartOf="@+id/genre_movie" />
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="23dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -73,14 +72,15 @@
             android:text="Genre"
             android:id="@+id/genre_movie"
             android:layout_below="@+id/actor_movie"
-            android:layout_alignEnd="@+id/price_movie" />
+            android:layout_alignParentStart="true" />
 
         <ImageView
             android:layout_width="150px"
             android:layout_height="150px"
             android:id="@+id/imageView"
-            android:layout_below="@+id/rating_movie"
-            android:layout_toEndOf="@+id/rating_movie" />
+            android:layout_marginEnd="95dp"
+            android:layout_below="@+id/explicit_movie"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 </LinearLayout>
