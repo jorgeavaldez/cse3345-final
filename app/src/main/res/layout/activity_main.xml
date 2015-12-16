@@ -52,6 +52,7 @@
                 android:layout_alignParentRight="true"
                 android:id="@+id/advanced_button"
                 android:onClick="onAdvancedButton" />
+
         </RelativeLayout>
 
     </LinearLayout>
@@ -60,19 +61,6 @@
         android:layout_width="match_parent"
         android:id="@+id/button_container"
         android:layout_height="wrap_content">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/advanced_form_anchor">
-
-            </RelativeLayout>
-
-        </ScrollView>
 
         <Button android:id="@+id/cancelButton" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,5 +74,20 @@
             android:text="Dank Memes"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />
-</RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/advanced_form_anchor">
+
+            </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
 </LinearLayout>
