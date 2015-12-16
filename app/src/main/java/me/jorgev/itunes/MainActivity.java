@@ -119,29 +119,32 @@ public class MainActivity extends AppCompatActivity {
         Media media = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.book_advancded_STUFF, parent, false);
         }
         // Lookup view for data population
        //books
-        TextView title = (TextView)convertView.findViewById(R.id.title_book);
-        TextView description = (TextView)convertView.findViewById(R.id.description_book);
-        TextView artist = (TextView)convertView.findViewById(R.id.artist_book);
-        TextView price = (TextView)convertView.findViewById(R.id.price_book);
-        TextView rating =(TextView)convertView.findViewById(R.id.rating_book);
-        TextView genre =(TextView)convertView.findViewById(R.id.genre_book);
-        TextView explicit = (TextView)convertView.findViewById(R.id.expicit_book)
-        ImageView picture = (ImageView) convertView.findViewById(R.id.picture_book);
+        TextView title = (TextView)convertView.findViewById(R.id.title_music);
+        TextView description = (TextView)convertView.findViewById(R.id.description_music);
+        TextView artist = (TextView)convertView.findViewById(R.id.artist_music);
+        TextView price = (TextView)convertView.findViewById(R.id.price_music);
+        TextView rating =(TextView)convertView.findViewById(R.id.rating_music);
+        TextView genre =(TextView)convertView.findViewById(R.id.genre_music);
+        TextView explicit = (TextView)convertView.findViewById(R.id.explicit_music)
+        ImageView picture = (ImageView) convertView.findViewById(R.id.picture_music);
 
         // Populate the data into the template view using the data object
-        title.setText(media.trackName);
-        artist.setText(media.artistName);
-        description.setText(media.artistName);
-        price.setText(media.collectionPrice);
-        rating.setText(media.)
-        String imageURL =media.artworkUrl60;
+        title.setText(media.getCollectionName());
+        artist.setText(media.getArtistName());
+        description.setText(media.getDescription());
+        price.setText(media.getCollectionPrice());
+        rating.setText(media.getRating());
+        genre.setText(media.getGenre());
+        explicit.setText(media.getExplicitness());
+
+
+        String imageURL =media.getartworkUrl60();
         Glide.with(this.ctx).load(imageURL).into(bookPicture);
 
-        bookGenre.setText(book.primaryGenreName);
 
     }
 
