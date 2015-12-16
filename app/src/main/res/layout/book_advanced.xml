@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="author"
-            android:id="@+id/author_podcast"
+            android:text="artist"
+            android:id="@+id/artist_podcast"
             android:layout_below="@+id/title_podcast"
             android:layout_alignParentStart="true" />
 
@@ -38,7 +38,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Explicit"
             android:id="@+id/explicit_podcast"
-            android:layout_above="@+id/author_podcast"
+            android:layout_above="@+id/artist_podcast"
             android:layout_toEndOf="@+id/genre_podcast" />
 
         <TextView

@@ -1,6 +1,7 @@
 package me.jorgev.itunes;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +10,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Spinner;
+import android.view.*;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import hugo.weaving.DebugLog;
 
@@ -20,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean advancedViewShowing;
     public RelativeLayout advancedViewRoot;
     View advancedSettingsView;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         advancedViewShowing = false;
         advancedViewRoot = (RelativeLayout) findViewById(R.id.advanced_form_anchor);
         advancedSettingsView = getLayoutInflater().inflate(R.layout.advanced_search, null);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
 //    @DebugLog
@@ -55,9 +69,7 @@ public class MainActivity extends AppCompatActivity {
             initSpinner();
 
             this.advancedViewShowing = true;
-        }
-
-        else {
+        } else {
             advancedViewRoot.removeView(advancedSettingsView);
             this.advancedViewShowing = false;
         }
@@ -65,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     @DebugLog
     public void initSpinner() {
-        String[] spinnerItems = new String[] {"Artist", "Track", "Album", "Video", "Mix", "Song"};
+        String[] spinnerItems = new String[]{"Artist", "Track", "Album", "Video", "Mix", "Song"};
 
         Spinner s = (Spinner) findViewById(R.id.result_type);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
@@ -78,4 +90,37 @@ public class MainActivity extends AppCompatActivity {
 //
 //        Glide.with(this).load(imageURL).into(imageView);
     }
+
+    public void setAttribute(int position, View convertView, ViewGroup parent) {
+
+        Media media = getItem(position);
+        // Check if an existing view is being reused, otherwise inflate the view
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+        }
+        // Lookup view for data population
+       //books
+        TextView title = (TextView)convertView.findViewById(R.id.title_book);
+        TextView description = (TextView)convertView.findViewById(R.id.description_book);
+        TextView artist = (TextView)convertView.findViewById(R.id.artist_book);
+        TextView price = (TextView)convertView.findViewById(R.id.price_book);
+        TextView rating =(TextView)convertView.findViewById(R.id.rating_book);
+        TextView genre =(TextView)convertView.findViewById(R.id.genre_book);
+        TextView explicit = (TextView)convertView.findViewById(R.id.expicit_book)
+        ImageView picture = (ImageView) convertView.findViewById(R.id.picture_book);
+
+        // Populate the data into the template view using the data object
+        title.setText(media.trackName);
+        artist.setText(media.artistName);
+        description.setText(media.artistName);
+        price.setText(media.collectionPrice);
+        rating.setText(media.)
+        String imageURL =media.artworkUrl60;
+        Glide.with(this.ctx).load(imageURL).into(bookPicture);
+
+        bookGenre.setText(book.primaryGenreName);
+
+    }
+
+
 }
