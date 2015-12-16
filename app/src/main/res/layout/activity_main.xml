@@ -27,23 +27,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentEnd="false">
+        android:layout_alignParentEnd="false"
+
+        >
 
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="144dp"
-            android:id="@+id/listText"
-            android:clickable="true"
-            /></ScrollView>
+            android:layout_height="wrap_content"></ScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:id="@+id/query_buttons_layout">
 
             <Button
@@ -52,7 +47,8 @@
                 android:text="@string/search_btn_text"
                 android:id="@+id/search_button"
                 android:onClick="onSearchButton"
-                android:layout_alignParentLeft="true" />
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -64,12 +60,19 @@
 
         </RelativeLayout>
 
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="187dp"
+            android:id="@+id/listText"
+            android:clickable="true"
+            />
+
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:id="@+id/button_container"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp">
 
         <Button android:id="@+id/cancelButton" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +90,6 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true">
 
             <RelativeLayout
