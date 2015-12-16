@@ -10,8 +10,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import hugo.weaving.DebugLog;
 
@@ -45,7 +47,7 @@ extends AsyncTask<String, Double, Media[]> {
 
         url.deleteCharAt(url.length() - 1);
 
-        return url.toString();
+        return this.BASE_URL + url.toString();
     }
 
     @DebugLog
@@ -73,20 +75,38 @@ extends AsyncTask<String, Double, Media[]> {
             conn.connect();
             int resCode = conn.getResponseCode();
 
+            Log.d("gets here", "" + resCode +"true");
             if (resCode == HttpURLConnection.HTTP_OK) {
                 String json = this.convertToString(conn.getInputStream());
+                Log.d("fuck", "dank");
 
-                Media[] m = gson.fromJson(json, Media[].class);
+                JsonParser p = new JsonParser();
+                JsonObject obj = p.parse(json).getAsJsonObject();
+                JsonArray arr = obj.getAsJsonArray("results");
+
+                Log.e("kill me", arr.toString());
+
+                Media[] m = gson.fromJson(arr.toString(), Media[].class);
                 return m;
             }
         }
 
         catch (Exception e) {
             Log.e("doInBackground", "couldn't connect");
-            Log.e("doInBackground", Arrays.toString(e.getStackTrace()));
+            Log.e("shit", e.getMessage());
+            for (StackTraceElement s : e.getStackTrace())
+                Log.e("doInBackground", s.toString());
         }
 
         return null;
+    }
+
+    @Override
+    protected void onPostExecute(Media[] m) {
+        for (Media med : m) {
+            if (med.getTrackName() != null)
+                Log.d("media", med.getTrackName());
+        }
     }
 
     public String convertToString(InputStream inputStream) throws IOException {

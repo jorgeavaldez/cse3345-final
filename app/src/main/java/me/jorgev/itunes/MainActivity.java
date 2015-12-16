@@ -1,12 +1,17 @@
 package me.jorgev.itunes;
 
 import android.app.Activity;
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+import android.content.Context;
+>>>>>>> 526ccefcd51c45deb9ba4977130037d95535b680
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -15,9 +20,18 @@ import android.widget.Spinner;
 import android.view.*;
 
 import com.bumptech.glide.Glide;
+<<<<<<< HEAD
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+=======
+import com.google.gson.Gson;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+>>>>>>> 526ccefcd51c45deb9ba4977130037d95535b680
 
 import hugo.weaving.DebugLog;
 
@@ -57,7 +71,15 @@ public class MainActivity extends AppCompatActivity {
 
     @DebugLog
     public void onSearchButton(View target) {
+        String q = ((EditText) findViewById(R.id.query_box)).getText().toString();
 
+        HashMap<String, String> p = new HashMap<>();
+
+        // Get form things
+
+        p.put("term", q);
+
+        new SearchRequest(p).execute();
     }
 
     // This function is the callback for when the advanced search options button is called.
@@ -90,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //        Glide.with(this).load(imageURL).into(imageView);
     }
+
 
     public void setAttribute(int position, View convertView, ViewGroup parent) {
 
@@ -124,3 +147,40 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+    public void writeToFile(Media[] arr) {
+        FileOutputStream outputStream;
+        File f = new File("data.txt");
+        Gson g = new Gson();
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            }
+            catch(Exception e) {
+                Log.e("write", "couldnt create file");
+                return;
+            }
+        }
+        try {
+            outputStream = openFileOutput("data.txt",
+                    Context.MODE_APPEND);
+        }
+
+        catch (FileNotFoundException e) {
+            Log.e("create fail", "couldnt open file");
+            return;
+        }
+
+        String contents = g.toJson(arr);
+
+        try {
+            outputStream.write(contents.getBytes());
+            outputStream.close();
+        }
+
+        catch(Exception e) {
+            return;
+        }
+    }
+}
+
+

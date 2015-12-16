@@ -1,5 +1,7 @@
 package me.jorgev.itunes;
 
+import hugo.weaving.DebugLog;
+
 /**
  * Created by jorgeavaldez on 12/15/15.
  */
@@ -19,13 +21,11 @@ public class Media {
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Media() {
     }
 
     /**
-     *
      * @param censoredName
      * @param viewURL
      * @param explicitness
@@ -37,6 +37,7 @@ public class Media {
      * @param kind
      * @param previewUrl
      */
+    @DebugLog
     public Media(String wrapperType, String explicitness, String kind, String trackName, String artistName, String collectionName, String censoredName, String viewURL, String previewUrl, String trackTimeMillis) {
         this.wrapperType = wrapperType;
         this.explicitness = explicitness;
@@ -51,182 +52,143 @@ public class Media {
     }
 
     /**
-     *
-     * @return
-     * The wrapperType
+     * @return The wrapperType
      */
     public String getWrapperType() {
         return wrapperType;
     }
 
     /**
-     *
-     * @param wrapperType
-     * The wrapperType
+     * @param wrapperType The wrapperType
      */
     public void setWrapperType(String wrapperType) {
         this.wrapperType = wrapperType;
     }
 
     /**
-     *
-     * @return
-     * The explicitness
+     * @return The explicitness
      */
     public String getExplicitness() {
         return explicitness;
     }
 
     /**
-     *
-     * @param explicitness
-     * The explicitness
+     * @param explicitness The explicitness
      */
     public void setExplicitness(String explicitness) {
         this.explicitness = explicitness;
     }
 
     /**
-     *
-     * @return
-     * The kind
+     * @return The kind
      */
     public String getKind() {
         return kind;
     }
 
     /**
-     *
-     * @param kind
-     * The kind
+     * @param kind The kind
      */
     public void setKind(String kind) {
         this.kind = kind;
     }
 
     /**
-     *
-     * @return
-     * The trackName
+     * @return The trackName
      */
     public String getTrackName() {
         return trackName;
     }
 
     /**
-     *
-     * @param trackName
-     * The trackName
+     * @param trackName The trackName
      */
     public void setTrackName(String trackName) {
         this.trackName = trackName;
     }
 
     /**
-     *
-     * @return
-     * The artistName
+     * @return The artistName
      */
     public String getArtistName() {
         return artistName;
     }
 
     /**
-     *
-     * @param artistName
-     * The artistName
+     * @param artistName The artistName
      */
     public void setArtistName(String artistName) {
         this.artistName = artistName;
     }
 
     /**
-     *
-     * @return
-     * The collectionName
+     * @return The collectionName
      */
     public String getCollectionName() {
         return collectionName;
     }
 
     /**
-     *
-     * @param collectionName
-     * The collectionName
+     * @param collectionName The collectionName
      */
     public void setCollectionName(String collectionName) {
         this.collectionName = collectionName;
     }
 
     /**
-     *
-     * @return
-     * The censoredName
+     * @return The censoredName
      */
     public String getCensoredName() {
         return censoredName;
     }
 
     /**
-     *
-     * @param censoredName
-     * The censoredName
+     * @param censoredName The censoredName
      */
     public void setCensoredName(String censoredName) {
         this.censoredName = censoredName;
     }
 
     /**
-     *
-     * @return
-     * The viewURL
+     * @return The viewURL
      */
     public String getViewURL() {
         return viewURL;
     }
 
     /**
-     *
-     * @param viewURL
-     * The viewURL
+     * @param viewURL The viewURL
      */
     public void setViewURL(String viewURL) {
         this.viewURL = viewURL;
     }
 
     /**
-     *
-     * @return
-     * The previewUrl
+     * @return The previewUrl
      */
     public String getPreviewUrl() {
         return previewUrl;
     }
 
     /**
-     *
-     * @param previewUrl
-     * The previewUrl
+     * @param previewUrl The previewUrl
      */
     public void setPreviewUrl(String previewUrl) {
         this.previewUrl = previewUrl;
     }
 
     /**
-     *
-     * @return
-     * The trackTimeMillis
+     * @return The trackTimeMillis
      */
     public String getTrackTimeMillis() {
         return trackTimeMillis;
     }
 
     /**
-     *
-     * @param trackTimeMillis
-     * The trackTimeMillis
+     * @param trackTimeMillis The trackTimeMillis
      */
     public void setTrackTimeMillis(String trackTimeMillis) {
         this.trackTimeMillis = trackTimeMillis;
     }
+
 }
