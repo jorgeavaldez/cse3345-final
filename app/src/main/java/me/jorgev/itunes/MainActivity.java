@@ -1,11 +1,8 @@
 package me.jorgev.itunes;
 
 import android.app.Activity;
-<<<<<<< HEAD
 import android.net.Uri;
-=======
 import android.content.Context;
->>>>>>> 526ccefcd51c45deb9ba4977130037d95535b680
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,18 +17,15 @@ import android.widget.Spinner;
 import android.view.*;
 
 import com.bumptech.glide.Glide;
-<<<<<<< HEAD
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
-=======
 import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.HashMap;
->>>>>>> 526ccefcd51c45deb9ba4977130037d95535b680
 
 import hugo.weaving.DebugLog;
 
@@ -78,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
         // Get form things
 
         p.put("term", q);
+        p.put("media", "music");
 
-        new SearchRequest(p).execute();
+        new SearchRequest(p, this, this.getApplicationContext()).execute();
     }
 
     // This function is the callback for when the advanced search options button is called.
@@ -114,39 +109,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void setAttribute(int position, View convertView, ViewGroup parent) {
+//    public void setAttribute(int position, View convertView, ViewGroup parent) {
+//
+//        Media media = getItem(position);
+//        // Check if an existing view is being reused, otherwise inflate the view
+//        if (convertView == null) {
+//            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+//        }
+//        // Lookup view for data population
+//       //books
+//        TextView title = (TextView)convertView.findViewById(R.id.title_book);
+//        TextView description = (TextView)convertView.findViewById(R.id.description_book);
+//        TextView artist = (TextView)convertView.findViewById(R.id.artist_book);
+//        TextView price = (TextView)convertView.findViewById(R.id.price_book);
+//        TextView rating =(TextView)convertView.findViewById(R.id.rating_book);
+//        TextView genre =(TextView)convertView.findViewById(R.id.genre_book);
+//        TextView explicit = (TextView)convertView.findViewById(R.id.expicit_book)
+//        ImageView picture = (ImageView) convertView.findViewById(R.id.picture_book);
+//
+//        // Populate the data into the template view using the data object
+//        title.setText(media.trackName);
+//        artist.setText(media.artistName);
+//        description.setText(media.artistName);
+//        price.setText(media.collectionPrice);
+//        rating.setText(media.)
+//        String imageURL =media.artworkUrl60;
+//        Glide.with(this.ctx).load(imageURL).into(bookPicture);
+//
+//        bookGenre.setText(book.primaryGenreName);
+//
+//    }
 
-        Media media = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
-        }
-        // Lookup view for data population
-       //books
-        TextView title = (TextView)convertView.findViewById(R.id.title_book);
-        TextView description = (TextView)convertView.findViewById(R.id.description_book);
-        TextView artist = (TextView)convertView.findViewById(R.id.artist_book);
-        TextView price = (TextView)convertView.findViewById(R.id.price_book);
-        TextView rating =(TextView)convertView.findViewById(R.id.rating_book);
-        TextView genre =(TextView)convertView.findViewById(R.id.genre_book);
-        TextView explicit = (TextView)convertView.findViewById(R.id.expicit_book)
-        ImageView picture = (ImageView) convertView.findViewById(R.id.picture_book);
-
-        // Populate the data into the template view using the data object
-        title.setText(media.trackName);
-        artist.setText(media.artistName);
-        description.setText(media.artistName);
-        price.setText(media.collectionPrice);
-        rating.setText(media.)
-        String imageURL =media.artworkUrl60;
-        Glide.with(this.ctx).load(imageURL).into(bookPicture);
-
-        bookGenre.setText(book.primaryGenreName);
-
-    }
 
 
-}
     public void writeToFile(Media[] arr) {
         FileOutputStream outputStream;
         File f = new File("data.txt");

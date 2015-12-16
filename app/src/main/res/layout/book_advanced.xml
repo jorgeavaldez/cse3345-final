@@ -47,14 +47,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Price"
             android:id="@+id/price_podcast"
-            android:layout_below="@+id/rating_podcast"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ratings"
-            android:id="@+id/rating_podcast"
-            android:layout_below="@+id/imageView"
-            android:layout_alignParentStart="true" />
+            android:layout_below="@+id/imageView" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,7 +64,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Genre"
             android:id="@+id/genre_podcast"
-            android:layout_below="@+id/author_podcast"
+            android:layout_below="@+id/Description_podcast"
             android:layout_alignParentStart="true" />
 
         <ImageView

@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 /**
@@ -23,10 +25,16 @@ public class MediaAdapter extends ArrayAdapter<Media> {
         Media b = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.search_results, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.advanced_search, parent, false);
         }
 
-        //convertView.findViewById(R.id.)
+        TextView tTitle = (TextView) convertView.findViewById(R.id.super_item_title);
+        TextView tExplicit = (TextView) convertView.findViewById(R.id.super_item_explicit);
+        TextView tType = (TextView) convertView.findViewById(R.id.super_item_type);
+
+        tTitle.setText(b.getTrackName());
+        tExplicit.setText(b.getExplicitness());
+
         // Return the completed view to render on screen
         return convertView;
     }

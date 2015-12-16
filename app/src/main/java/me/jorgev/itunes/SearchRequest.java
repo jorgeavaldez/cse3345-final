@@ -1,7 +1,13 @@
 package me.jorgev.itunes;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,10 +34,15 @@ extends AsyncTask<String, Double, Media[]> {
     public String REQ_URL;
 
     private HashMap<String, String> reqParams;
+    private Activity parent;
+    private Context ctx;
 
-    public SearchRequest(HashMap<String, String> p) {
+    public SearchRequest(HashMap<String, String> p, Activity parent, Context ctx) {
         this.reqParams = p;
         this.REQ_URL = buildSearchUrl();
+
+        this.parent = parent;
+        this.ctx = ctx;
     }
 
     @DebugLog
@@ -103,10 +114,20 @@ extends AsyncTask<String, Double, Media[]> {
 
     @Override
     protected void onPostExecute(Media[] m) {
-        for (Media med : m) {
-            if (med.getTrackName() != null)
-                Log.d("media", med.getTrackName());
-        }
+        MediaAdapter mediaAdapter = new MediaAdapter(this.ctx, m);
+
+        final ListView lv = (ListView) this.parent.findViewById(R.id.listText);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Media b = (Media)lv.getItemAtPosition(position);
+                Gson g = new Gson();
+                Intent intent = new Intent(ctx, AdapterView.class);
+                intent.putExtra("SELECTED_BOOK_JSON", g.toJson(b));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                ctx.startActivity(intent);
+            }
+        });
     }
 
     public String convertToString(InputStream inputStream) throws IOException {

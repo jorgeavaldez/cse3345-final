@@ -18,6 +18,7 @@ public class Media {
     private String viewURL;
     private String previewUrl;
     private String trackTimeMillis;
+    private String trackPrice;
 
     /**
      * No args constructor for use in serialization
@@ -38,7 +39,7 @@ public class Media {
      * @param previewUrl
      */
     @DebugLog
-    public Media(String wrapperType, String explicitness, String kind, String trackName, String artistName, String collectionName, String censoredName, String viewURL, String previewUrl, String trackTimeMillis) {
+    public Media(String wrapperType, String explicitness, String kind, String trackName, String artistName, String collectionName, String censoredName, String viewURL, String previewUrl, String trackTimeMillis, String trackPrice) {
         this.wrapperType = wrapperType;
         this.explicitness = explicitness;
         this.kind = kind;
@@ -49,6 +50,7 @@ public class Media {
         this.viewURL = viewURL;
         this.previewUrl = previewUrl;
         this.trackTimeMillis = trackTimeMillis;
+        this.trackPrice = trackPrice;
     }
 
     /**
@@ -191,4 +193,11 @@ public class Media {
         this.trackTimeMillis = trackTimeMillis;
     }
 
+    public String getTrackPrice() {
+        return this.trackPrice;
+    }
+
+    public void setTrackPrice(String trackPrice) {
+        this.trackPrice = trackPrice;
+    }
 }

@@ -13,7 +13,6 @@
     android:weightSum="1">
 
 
-
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -21,6 +20,7 @@
         android:hint="@string/query_box_hint"
         android:gravity="center_horizontal"
         android:layout_alignParentStart="false" />
+
 
     <LinearLayout
         android:id="@+id/button_anchor_layout"
@@ -30,6 +30,15 @@
         android:layout_alignParentEnd="false">
 
 
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:id="@+id/listText"
+            android:clickable="true"
+            /></ScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
