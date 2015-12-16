@@ -1,17 +1,25 @@
 package me.jorgev.itunes;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.HashMap;
 
 import hugo.weaving.DebugLog;
 
@@ -43,7 +51,15 @@ public class MainActivity extends AppCompatActivity {
 
     @DebugLog
     public void onSearchButton(View target) {
+        String q = ((EditText) findViewById(R.id.query_box)).getText().toString();
 
+        HashMap<String, String> p = new HashMap<>();
+
+        // Get form things
+
+        p.put("term", q);
+
+        new SearchRequest(p).execute();
     }
 
     // This function is the callback for when the advanced search options button is called.
@@ -78,4 +94,40 @@ public class MainActivity extends AppCompatActivity {
 //
 //        Glide.with(this).load(imageURL).into(imageView);
     }
+
+    public void writeToFile(Media[] arr) {
+        FileOutputStream outputStream;
+        File f = new File("data.txt");
+        Gson g = new Gson();
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            }
+            catch(Exception e) {
+                Log.e("write", "couldnt create file");
+                return;
+            }
+        }
+        try {
+            outputStream = openFileOutput("data.txt",
+                    Context.MODE_APPEND);
+        }
+
+        catch (FileNotFoundException e) {
+            Log.e("create fail", "couldnt open file");
+            return;
+        }
+
+        String contents = g.toJson(arr);
+
+        try {
+            outputStream.write(contents.getBytes());
+            outputStream.close();
+        }
+
+        catch(Exception e) {
+            return;
+        }
+    }
 }
+
