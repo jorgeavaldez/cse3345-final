@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         String[] spinnerItems = new String[] {"Artist", "Track", "Album", "Video", "Mix", "Song"};
 
         Spinner s = (Spinner) findViewById(R.id.result_type);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, spinnerItems);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                R.layout.support_simple_spinner_dropdown_item, spinnerItems);
         s.setAdapter(adapter);
 
 //        String imageURL = "http://i.giphy.com/yShdlgJ3ZVdVm.gif";
