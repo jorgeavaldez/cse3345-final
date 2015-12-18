@@ -16,7 +16,7 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/query_box"
+        android:id="@+id/query_box_adv"
         android:hint="@string/query_box_hint"
         android:gravity="center_horizontal"
         android:layout_alignParentStart="false" />
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_btn_text"
-        android:id="@+id/search_button"
+        android:id="@+id/search_button_adv"
         android:onClick="onSearchButton"
         android:layout_below="@+id/query_box"
         android:layout_alignParentStart="true"
@@ -37,28 +37,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/search_button"
+        android:layout_below="@+id/search_button_adv"
         android:layout_alignParentEnd="true"
-        android:id="@+id/advanced_radio_holder"></RelativeLayout>
+        android:id="@+id/advanced_radio_holder_adv"></RelativeLayout>
 
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="196dp"
-        android:id="@+id/advanced_results"
+        android:id="@+id/advanced_results_adv"
         android:clickable="true"
         android:text="Lets"
-        android:layout_above="@+id/button_container"
+        android:layout_above="@+id/button_container_adv"
         android:layout_alignParentStart="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:id="@+id/button_container"
+        android:id="@+id/button_container_adv"
         android:layout_height="46dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true">
 
-        <Button android:id="@+id/cancelButton" android:layout_width="wrap_content"
+        <Button android:id="@+id/cancelButton_adv" android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Back"
             android:layout_gravity="right"
