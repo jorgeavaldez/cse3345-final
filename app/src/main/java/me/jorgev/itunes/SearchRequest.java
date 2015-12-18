@@ -16,10 +16,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 import hugo.weaving.DebugLog;
 
@@ -104,7 +102,7 @@ extends AsyncTask<String, Double, Media[]> {
 
         catch (Exception e) {
             Log.e("doInBackground", "couldn't connect");
-            Log.e("shit", e.getMessage());
+            Log.e("doInBackground", e.getMessage());
             for (StackTraceElement s : e.getStackTrace())
                 Log.e("doInBackground", s.toString());
         }
@@ -115,14 +113,15 @@ extends AsyncTask<String, Double, Media[]> {
     @Override
     protected void onPostExecute(Media[] m) {
         MediaAdapter mediaAdapter = new MediaAdapter(this.ctx, m);
-
+        Log.d("onPostExecute search", "here we at");
         final ListView lv = (ListView) this.parent.findViewById(R.id.listText);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("onItemClick", "tambien");
                 Media b = (Media)lv.getItemAtPosition(position);
                 Gson g = new Gson();
-                Intent intent = new Intent(ctx, AdapterView.class);
+                Intent intent = new Intent(ctx, MusicDetailsActivity.class);
                 intent.putExtra("SELECTED_BOOK_JSON", g.toJson(b));
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 ctx.startActivity(intent);
