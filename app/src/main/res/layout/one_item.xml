@@ -30,4 +30,12 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#000000" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button15"
+        android:background="@drawable/drawables"/>
+
 </LinearLayout>

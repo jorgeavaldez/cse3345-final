@@ -99,7 +99,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/radioGroup"
-            android:layout_alignParentEnd="true">
+            android:layout_alignParentEnd="true"
+            android:id="@+id/radioGroup2">
 
             <RadioButton
              android:layout_width="wrap_content"
@@ -127,6 +128,18 @@
             android:id="@+id/rating_button"
             android:checked="false"
             android:layout_above="@+id/radioButton3"
-            android:layout_alignStart="@+id/radioButton5" />
+            android:layout_alignStart="@+id/radioButton5"
+            />
         </RadioGroup>
-       </RelativeLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button12"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="262dp"
+        android:background="@drawable/drawables"/>
+</RelativeLayout>

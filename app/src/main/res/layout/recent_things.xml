@@ -9,9 +9,11 @@
         android:text="Thing I searched 1"
         android:id="@+id/button"
         android:layout_gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button3"
-        android:layout_marginTop="114dp" />
+        android:layout_marginTop="95dp"
+        android:background="@drawable/drawables"
+        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -20,7 +22,9 @@
         android:id="@+id/button2"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button"
-        android:layout_alignStart="@+id/button3" />
+        android:background="@drawable/drawables"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignStart="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
@@ -29,7 +33,9 @@
         android:id="@+id/button3"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button2"
-        android:layout_alignStart="@+id/button4" />
+        android:background="@drawable/drawables"
+        android:layout_alignStart="@+id/button2"
+        android:layout_alignEnd="@+id/button2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,7 +44,9 @@
         android:id="@+id/button4"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button3"
-        android:layout_alignStart="@+id/button5" />
+        android:background="@drawable/drawables"
+        android:layout_alignStart="@+id/button3"
+        android:layout_alignEnd="@+id/button3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -47,7 +55,9 @@
         android:id="@+id/button5"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/drawables"
+        android:layout_alignStart="@+id/button4"
+        android:layout_alignEnd="@+id/button4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,7 +66,8 @@
         android:text="WHAT DID I SEE LAST"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="39dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -64,6 +75,7 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/button11"
+        android:background="@drawable/drawables"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
