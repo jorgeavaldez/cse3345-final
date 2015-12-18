@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean advancedViewShowing;
     public RelativeLayout advancedViewRoot;
-    View advancedSettingsView;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.

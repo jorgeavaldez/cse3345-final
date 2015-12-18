@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/query_box"
         android:hint="@string/query_box_hint"
+        android:onClick="onSearchButton"
         android:gravity="center_horizontal"
         android:layout_alignParentStart="false" />
 
@@ -27,9 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentEnd="false"
-
-        >
+        android:layout_alignParentEnd="false" >
 
 
         <RelativeLayout
