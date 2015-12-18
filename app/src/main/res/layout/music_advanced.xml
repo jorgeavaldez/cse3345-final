@@ -20,7 +20,7 @@
             android:text="artist"
             android:id="@+id/artist_music"
             android:layout_below="@+id/title_music"
-            android:layout_alignStart="@+id/title_music" />
+            android:layout_alignStart="@+id/genre_music" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
             android:id="@+id/title_music"
             android:textColor="@color/colorAccent"
             android:layout_alignTop="@+id/explicit_music"
-            android:layout_alignStart="@+id/genre_music" />
+            android:layout_alignStart="@+id/artist_music" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,30 +54,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
-            android:id="@+id/description_music"
-            android:layout_marginTop="63dp"
-            android:layout_marginStart="51dp"
-            android:layout_below="@+id/music_price"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Genre"
             android:id="@+id/genre_music"
+            android:layout_marginStart="78dp"
             android:layout_below="@+id/artist_music"
-            android:layout_alignStart="@+id/description_music" />
+            android:layout_alignParentStart="true" />
 
         <ImageView
-            android:layout_width="200px"
-            android:layout_height="200px"
+            android:layout_width="100px"
+            android:layout_height="100px"
             android:id="@+id/picture_music"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="83dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="86dp" />
+            android:layout_alignParentEnd="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -106,9 +97,9 @@
             android:text="Preview"
             android:id="@+id/button16"
             android:background="@drawable/drawables"
-            android:layout_below="@+id/music_price"
+            android:layout_centerVertical="true"
             android:layout_alignEnd="@+id/picture_music"
-            android:layout_alignStart="@+id/picture_music" />
+            android:layout_alignStart="@+id/explicit_music" />
 
 
     </RelativeLayout>
