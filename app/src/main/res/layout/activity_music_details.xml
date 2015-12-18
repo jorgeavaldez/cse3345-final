@@ -46,8 +46,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ratings"
-            android:id="@+id/rating_music"
+            android:text="Album"
+            android:id="@+id/album_music"
             android:layout_below="@+id/genre_music"
             android:layout_alignStart="@+id/genre_music" />
 
@@ -96,8 +96,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Price"
             android:id="@+id/music_price"
-            android:layout_below="@+id/rating_music"
-            android:layout_alignStart="@+id/rating_music" />
+            android:layout_below="@+id/album_music"
+            android:layout_alignStart="@+id/album_music" />
 
         <Button
             style="?android:attr/buttonStyleSmall"

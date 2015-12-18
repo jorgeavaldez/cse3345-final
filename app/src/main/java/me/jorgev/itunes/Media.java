@@ -19,6 +19,9 @@ public class Media {
     private String previewUrl;
     private String trackTimeMillis;
     private String trackPrice;
+    private String ratingIndex;
+    private String primaryGenreName;
+    private String artworkUrl100;
 
     /**
      * No args constructor for use in serialization
@@ -37,9 +40,16 @@ public class Media {
      * @param collectionName
      * @param kind
      * @param previewUrl
+     * @param ratingIndex
+     * @param primaryGenreName
+     * @param trackPrice
+     * @param artworkUrl100
      */
     @DebugLog
-    public Media(String wrapperType, String explicitness, String kind, String trackName, String artistName, String collectionName, String censoredName, String viewURL, String previewUrl, String trackTimeMillis, String trackPrice) {
+    public Media(String wrapperType, String explicitness, String kind, String trackName,
+                 String artistName, String collectionName, String censoredName, String viewURL,
+                 String previewUrl, String trackTimeMillis, String trackPrice, String ratingIndex,
+                 String primaryGenreName, String artworkUrl100) {
         this.wrapperType = wrapperType;
         this.explicitness = explicitness;
         this.kind = kind;
@@ -51,6 +61,9 @@ public class Media {
         this.previewUrl = previewUrl;
         this.trackTimeMillis = trackTimeMillis;
         this.trackPrice = trackPrice;
+        this.ratingIndex = ratingIndex;
+        this.primaryGenreName = primaryGenreName;
+        this.artworkUrl100 = artworkUrl100;
     }
 
     /**
@@ -199,5 +212,29 @@ public class Media {
 
     public void setTrackPrice(String trackPrice) {
         this.trackPrice = trackPrice;
+    }
+
+    public String getRatingIndex() {
+        return this.ratingIndex;
+    }
+
+    public void setRatingIndex(String ratingIndex) {
+        this.ratingIndex = ratingIndex;
+    }
+
+    public String getPrimaryGenreName() {
+        return this.primaryGenreName;
+    }
+
+    public void setPrimaryGenreName(String primaryGenreName) {
+        this.primaryGenreName = primaryGenreName;
+    }
+
+    public String getArtworkUrl100() {
+        return this.artworkUrl100;
+    }
+
+    public void setArtworkUrl100(String artworkUrl100) {
+        this.artworkUrl100 = artworkUrl100;
     }
 }

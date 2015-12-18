@@ -50,7 +50,7 @@ extends AsyncTask<String, Double, Media[]> {
         for (String key : this.reqParams.keySet()) {
             url.append(key);
             url.append("=");
-            url.append(this.reqParams.get(key));
+            url.append(this.reqParams.get(key).replace(' ', '+'));
             url.append("&");
         }
 
