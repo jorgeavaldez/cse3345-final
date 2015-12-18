@@ -7,6 +7,8 @@ import android.view.View;
 
 public class BeginningActivity extends AppCompatActivity {
 
+    static final int ADVANCED_SETTINGS_RESULT = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,14 @@ public class BeginningActivity extends AppCompatActivity {
 
     // TODO: Implement the advanced view activity.
     protected void onAdvanced(View target) {
-        //Intent intent = new Intent(this, )
+        Intent intent = new Intent(this, AdvancedSearchActivity.class);
+
+        startActivityForResult(intent, this.ADVANCED_SETTINGS_RESULT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     // TODO: Implement the Favorites view activity.

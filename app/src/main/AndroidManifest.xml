@@ -28,7 +28,14 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".BeginningActivity" />
-        <activity android:name=".MusicDetailsActivity"></activity>
+        <activity android:name=".MusicDetailsActivity" />
+        <activity android:name=".AdvancedSearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
