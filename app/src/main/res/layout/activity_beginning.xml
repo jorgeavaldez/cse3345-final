@@ -55,23 +55,23 @@
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="300px"
             android:layout_height="wrap_content"
             android:text="Favorites"
             android:id="@+id/button8"
+            android:background="@drawable/drawables"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:background="@drawable/drawables"/>
+            android:layout_alignParentStart="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="300px"
             android:layout_height="wrap_content"
             android:text="Past Search"
             android:id="@+id/button9"
             android:layout_alignBottom="@+id/button8"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/drawables"/>
+            android:background="@drawable/drawables" />
     </RelativeLayout>
 
 </RelativeLayout>

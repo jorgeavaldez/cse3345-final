@@ -9,11 +9,4 @@
         android:text="Literally Everything"
         android:id="@+id/textView" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/button14"
-        android:background="@drawable/drawables"/>
 </LinearLayout>
