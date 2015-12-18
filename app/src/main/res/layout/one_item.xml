@@ -27,5 +27,4 @@
         android:id="@+id/super_item_type"
         android:layout_gravity="center_horizontal" />
 
-
 </LinearLayout>
