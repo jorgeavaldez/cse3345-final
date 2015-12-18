@@ -20,7 +20,7 @@
             android:text="artist"
             android:id="@+id/artist_music"
             android:layout_below="@+id/title_music"
-            android:layout_toStartOf="@+id/explicit_music" />
+            android:layout_alignStart="@+id/title_music" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,42 +28,38 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Title"
             android:id="@+id/title_music"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:textColor="@color/colorAccent"
+            android:layout_alignTop="@+id/explicit_music"
+            android:layout_alignStart="@+id/genre_music" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Explicit"
+            android:text="x"
             android:id="@+id/explicit_music"
-            android:layout_above="@+id/artist_music"
-            android:layout_toEndOf="@+id/genre_music" />
+            android:layout_alignTop="@+id/picture_music"
+            android:layout_toStartOf="@+id/title_music"
+            android:textColor="#C9151C"
+            android:textIsSelectable="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Price"
-            android:id="@+id/price_music"
-            android:layout_below="@+id/rating_music"
-            android:layout_alignEnd="@+id/title_music" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ratings"
             android:id="@+id/rating_music"
-            android:layout_below="@+id/genre_music"
-            android:layout_alignParentStart="true" />
+            android:layout_below="@+id/picture_music"
+            android:layout_alignStart="@+id/picture_music" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sescription"
+            android:text="Description"
             android:id="@+id/description_music"
-            android:layout_marginTop="41dp"
-            android:layout_below="@+id/price_music"
-            android:layout_alignParentStart="true" />
+            android:layout_marginTop="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="55dp"
+            android:layout_below="@+id/rating_music" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,15 +67,17 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Genre"
             android:id="@+id/genre_music"
-            android:layout_below="@+id/artist_music" />
+            android:layout_above="@+id/rating_music"
+            android:layout_alignStart="@+id/description_music" />" />
 
         <ImageView
             android:layout_width="150px"
             android:layout_height="150px"
             android:id="@+id/picture_music"
+            android:layout_marginTop="42dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="94dp" />
+            android:layout_marginEnd="86dp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -89,7 +87,17 @@
             android:id="@+id/button13"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:background="@drawable/drawables"/>
+            android:background="@drawable/drawables"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Price"
+            android:id="@+id/music_price"
+            android:layout_below="@+id/rating_music"
+            android:layout_alignStart="@+id/rating_music" />
 
 
     </RelativeLayout>
