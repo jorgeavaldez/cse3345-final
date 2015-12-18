@@ -50,8 +50,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ratings"
-            android:id="@+id/rating_music"
+            android:text="Album"
+            android:id="@+id/album_music"
             android:layout_below="@+id/genre_music"
             android:layout_alignStart="@+id/genre_music"
             android:textSize="25dp"/>
@@ -92,9 +92,14 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Price"
             android:id="@+id/music_price"
+<<<<<<< HEAD:app/src/main/res/layout/music_advanced.xml
             android:layout_below="@+id/rating_music"
             android:layout_alignStart="@+id/rating_music"
             android:textSize="25dp"/>
+=======
+            android:layout_below="@+id/album_music"
+            android:layout_alignStart="@+id/album_music" />
+>>>>>>> 88eae61142deca6e2226dd5a209cb7dee879f428:app/src/main/res/layout/activity_music_details.xml
 
         <Button
             style="?android:attr/buttonStyleSmall"

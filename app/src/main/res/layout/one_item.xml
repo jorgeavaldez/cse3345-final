@@ -24,6 +24,19 @@
         android:layout_below="@+id/super_item_title"
         android:layout_alignStart="@+id/super_item_title" />
 
+
+    <!--Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/button15"
+        android:background="@drawable/drawables"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" /-->
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +44,7 @@
         android:text="Genre"
         android:id="@+id/super_item_genre"
         android:layout_below="@+id/super_item_artist"
-        android:layout_toEndOf="@+id/super_Item_Explicit" />
+        android:layout_toEndOf="@+id/super_item_explicit" />
 
     <ImageView
         android:layout_width="100px"
@@ -44,7 +57,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/super_Item_Explicit"
+        android:id="@+id/super_item_explicit"
         android:text="X"
         android:textColor="#C9151C"
         android:textSize="10dp"
