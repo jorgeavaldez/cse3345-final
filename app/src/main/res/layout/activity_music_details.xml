@@ -3,12 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"></LinearLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -62,18 +56,16 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Genre"
             android:id="@+id/genre_music"
-            android:layout_marginStart="56dp"
             android:textSize="30dp"
             android:layout_below="@+id/artist_music"
-            android:layout_alignParentStart="true" />
+            android:layout_toEndOf="@+id/button16" />
 
         <ImageView
             android:layout_width="150px"
             android:layout_height="150px"
             android:id="@+id/picture_music"
-            android:layout_marginEnd="67dp"
-            android:layout_alignBottom="@+id/artist_music"
-            android:layout_alignParentEnd="true" />
+            android:layout_below="@+id/music_price"
+            android:layout_alignEnd="@+id/genre_music" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -94,18 +86,28 @@
             android:id="@+id/music_price"
             android:textSize="25dp"
             android:layout_below="@+id/album_music"
-            android:layout_alignStart="@+id/album_music" />
+            android:layout_alignEnd="@+id/album_music" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Preview"
-            android:id="@+id/button16"
+            android:id="@+id/preview_button"
             android:background="@drawable/drawables"
-            android:layout_alignBottom="@+id/music_price"
-            android:layout_alignEnd="@+id/picture_music"
-            android:layout_alignStart="@+id/picture_music" />
+            android:layout_below="@+id/picture_music"
+            android:layout_alignEnd="@+id/favorites_button"
+            android:layout_alignStart="@+id/favorites_button" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Add to Favorites"
+            android:id="@+id/favorites_button"
+            android:background="@drawable/drawables"
+            android:layout_below="@+id/preview_button"
+            android:layout_centerHorizontal="true" />
+
 
 
     </RelativeLayout>
