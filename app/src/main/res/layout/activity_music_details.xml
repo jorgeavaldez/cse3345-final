@@ -3,12 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"></LinearLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -62,18 +56,16 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Genre"
             android:id="@+id/genre_music"
-            android:layout_marginStart="56dp"
             android:textSize="30dp"
             android:layout_below="@+id/artist_music"
-            android:layout_alignParentStart="true" />
+            android:layout_toEndOf="@+id/button16" />
 
         <ImageView
             android:layout_width="150px"
             android:layout_height="150px"
             android:id="@+id/picture_music"
-            android:layout_marginEnd="67dp"
-            android:layout_alignBottom="@+id/artist_music"
-            android:layout_alignParentEnd="true" />
+            android:layout_below="@+id/music_price"
+            android:layout_alignEnd="@+id/genre_music" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -92,14 +84,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Price"
             android:id="@+id/music_price"
-<<<<<<< HEAD:app/src/main/res/layout/music_advanced.xml
-            android:layout_below="@+id/rating_music"
-            android:layout_alignStart="@+id/rating_music"
-            android:textSize="25dp"/>
-=======
+            android:textSize="25dp"
             android:layout_below="@+id/album_music"
-            android:layout_alignStart="@+id/album_music" />
->>>>>>> 88eae61142deca6e2226dd5a209cb7dee879f428:app/src/main/res/layout/activity_music_details.xml
+            android:layout_alignEnd="@+id/album_music" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -108,9 +95,8 @@
             android:text="Preview"
             android:id="@+id/button16"
             android:background="@drawable/drawables"
-            android:layout_alignBottom="@+id/music_price"
-            android:layout_alignEnd="@+id/picture_music"
-            android:layout_alignStart="@+id/picture_music" />
+            android:layout_below="@+id/picture_music"
+            android:layout_alignParentStart="true" />
 
 
     </RelativeLayout>
