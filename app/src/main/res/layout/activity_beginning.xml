@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:text="Normal Search"
             android:id="@+id/button7"
-            android:onClick="onSearchButton"
+            android:onClick="onSearch"
             android:layout_alignParentStart="true"
             android:background="@drawable/drawables"/>
 
@@ -24,6 +24,7 @@
             android:id="@+id/button6"
             android:layout_below="@+id/button7"
             android:layout_alignParentStart="true"
+            android:onClick="onAdvanced"
             android:layout_alignEnd="@+id/button7"
             android:background="@drawable/drawables"/>
     </RelativeLayout>

@@ -1,6 +1,7 @@
 package me.jorgev.itunes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -33,22 +34,34 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean advancedViewShowing;
     public RelativeLayout advancedViewRoot;
+    private String filterType;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
 
+    @DebugLog
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        advancedViewShowing = false;
-        advancedViewRoot = (RelativeLayout) findViewById(R.id.advanced_form_anchor);
         //advancedSettingsView = getLayoutInflater().inflate(R.layout.advanced_search, null);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        Intent intent = getIntent();
+
+        try {
+            this.filterType = intent.getStringExtra("FILTER_TYPE");
+            Log.d("FilterType", this.filterType);
+        }
+
+        catch (Exception e) {
+            this.filterType = "";
+            Log.e("FilterType", "Doesn't exist");
+        }
     }
 
 //    @DebugLog
@@ -72,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
 
         p.put("term", q);
         p.put("media", "music");
+
+        if (!this.filterType.equals("")) {
+            String[] splt = this.filterType.split(",");
+            p.put(splt[0], splt[1]);
+
+            Log.d("onSearch", splt[0] + splt[1]);
+        }
 
         new SearchRequest(p, this, this.getApplicationContext()).execute();
     }
