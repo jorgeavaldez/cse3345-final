@@ -16,6 +16,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/album_mv_view" />
+
+    <ImageSwitcher
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageSwitcher"
+        android:layout_gravity="right" />
+
     <VideoView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
