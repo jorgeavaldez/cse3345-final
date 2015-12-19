@@ -29,11 +29,14 @@ public class MediaAdapter extends ArrayAdapter<Media> {
         }
 
         TextView tTitle = (TextView) convertView.findViewById(R.id.super_item_title);
+        TextView tArtist = (TextView) convertView.findViewById(R.id.super_item_artist);
         TextView tExplicit = (TextView) convertView.findViewById(R.id.super_item_explicit);
-        TextView tType = (TextView) convertView.findViewById(R.id.super_item_type);
+        TextView tType = (TextView) convertView.findViewById(R.id.super_item_genre);
 
         tTitle.setText(b.getTrackName());
-        tExplicit.setText(b.getExplicitness());
+        tArtist.setText(b.getArtistName());
+        //tExplicit.setText(b.getTrackExplicitness());
+        tType.setText(b.getTrackExplicitness());
 
         // Return the completed view to render on screen
         return convertView;

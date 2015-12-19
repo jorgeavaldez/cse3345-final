@@ -9,7 +9,7 @@ import hugo.weaving.DebugLog;
 
 public class Media {
     private String wrapperType;
-    private String explicitness;
+    private String trackExplicitness;
     private String kind;
     private String trackName;
     private String artistName;
@@ -32,7 +32,7 @@ public class Media {
     /**
      * @param censoredName
      * @param viewURL
-     * @param explicitness
+     * @param trackExplicitness
      * @param trackTimeMillis
      * @param wrapperType
      * @param trackName
@@ -46,12 +46,12 @@ public class Media {
      * @param artworkUrl100
      */
     @DebugLog
-    public Media(String wrapperType, String explicitness, String kind, String trackName,
+    public Media(String wrapperType, String trackExplicitness, String kind, String trackName,
                  String artistName, String collectionName, String censoredName, String viewURL,
                  String previewUrl, String trackTimeMillis, String trackPrice, String ratingIndex,
                  String primaryGenreName, String artworkUrl100) {
         this.wrapperType = wrapperType;
-        this.explicitness = explicitness;
+        this.trackExplicitness = trackExplicitness;
         this.kind = kind;
         this.trackName = trackName;
         this.artistName = artistName;
@@ -81,17 +81,17 @@ public class Media {
     }
 
     /**
-     * @return The explicitness
+     * @return The trackExplicitness
      */
-    public String getExplicitness() {
-        return explicitness;
+    public String getTrackExplicitness() {
+        return trackExplicitness;
     }
 
     /**
-     * @param explicitness The explicitness
+     * @param trackExplicitness The trackExplicitness
      */
-    public void setExplicitness(String explicitness) {
-        this.explicitness = explicitness;
+    public void setTrackExplicitness(String trackExplicitness) {
+        this.trackExplicitness = trackExplicitness;
     }
 
     /**

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
 
+import hugo.weaving.DebugLog;
+
 public class AdvancedSearchActivity extends AppCompatActivity {
 
     @Override
@@ -14,22 +16,32 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_advanced_search);
     }
 
-    protected void onBack(View target) {
+    @DebugLog
+    public void onBack(View target) {
         Intent resData = new Intent();
-        int resCode;
+        int resCode = 1;
 
         int checkedId = ((RadioGroup)findViewById(R.id.radioGroup)).getCheckedRadioButtonId();
+        String res;
 
         if (checkedId == R.id.advanced_album_button) {
-
+            res = "entity,album";
         }
         else if (checkedId == R.id.advanced_artist_button) {
-
+            res = "entity,musicArtist";
         }
 
-        else if (checkedId = R.id.advanced_song_button) {
-
+        else if (checkedId == R.id.advanced_song_button) {
+            res = "entity,song";
         }
-        resData.putExtra("FILTER_TYPE", )
+
+        else {
+            res = "";
+            resCode = 0;
+        }
+        resData.putExtra("FILTER_TYPE", res);
+
+        setResult(resCode, resData);
+        finish();
     }
 }
