@@ -68,8 +68,9 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="300px"
             android:layout_height="wrap_content"
-            android:text="Past Search"
+            android:text="Past Searches"
             android:id="@+id/button9"
+            android:onClick="onPastSearches"
             android:layout_alignBottom="@+id/button8"
             android:layout_alignParentEnd="true"
             android:background="@drawable/drawables" />

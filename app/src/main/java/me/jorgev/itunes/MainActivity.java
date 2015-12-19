@@ -2,13 +2,17 @@ package me.jorgev.itunes;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,7 +30,11 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import hugo.weaving.DebugLog;
 
@@ -35,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean advancedViewShowing;
     public RelativeLayout advancedViewRoot;
     private String filterType;
+
+    public Set<String> recentQueries;
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor prefEditor;
+
+    private String query;
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -51,6 +67,12 @@ public class MainActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
+        this.sharedPreferences = getSharedPreferences("ITUNES_RECENTS", Context.MODE_PRIVATE);
+        this.prefEditor = sharedPreferences.edit();
+
+        this.recentQueries = sharedPreferences.getStringSet("RECENT_QUERIES", new HashSet<String>());
+        Log.e("RECENT QUERIES", this.recentQueries.toString());
+
         Intent intent = getIntent();
 
         try {
@@ -62,6 +84,29 @@ public class MainActivity extends AppCompatActivity {
             this.filterType = "";
             Log.e("FilterType", "Doesn't exist");
         }
+
+        // Make it so you can see the recent search queries
+        AutoCompleteTextView queryBox = (AutoCompleteTextView) findViewById(R.id.query_box);
+        Log.d("We get here", "tru");
+        ArrayAdapter<String> queryBoxAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                this.recentQueries.toArray(new String[this.recentQueries.size()]));
+
+        queryBox.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String entity = sharedPreferences
+                        .getString(parent.getItemAtPosition(position).toString(), null);
+
+                if (entity != null) {
+                    filterType = "entity," + entity;
+                }
+
+                query = parent.getItemAtPosition(position).toString();
+            }
+        });
+
+        queryBox.setAdapter(queryBoxAdapter);
     }
 
 //    @DebugLog
@@ -77,14 +122,16 @@ public class MainActivity extends AppCompatActivity {
 
     @DebugLog
     public void onSearchButton(View target) {
-        String q = ((EditText) findViewById(R.id.query_box)).getText().toString();
+        if (query == null)
+            query = ((AutoCompleteTextView) findViewById(R.id.query_box)).getText().toString();
 
         HashMap<String, String> p = new HashMap<>();
 
         // Get form things
 
-        p.put("term", q);
+        p.put("term", query);
         p.put("media", "music");
+
 
         if (!this.filterType.equals("")) {
             String[] splt = this.filterType.split(",");
@@ -92,6 +139,19 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d("onSearch", splt[0] + splt[1]);
         }
+
+        // Write to the SharedPreferences
+        this.recentQueries.add(query);
+        this.prefEditor.putStringSet("RECENT_QUERIES", this.recentQueries);
+
+        Log.e("add to recents", this.recentQueries.toString());
+
+        // We're using this as a jank map, where the word query gives the entity, if any.
+        if (this.filterType != null && !this.filterType.equals(""))
+            this.prefEditor.putString(query, this.filterType.split(",")[1]);
+
+        this.query = null;
+        this.prefEditor.commit();
 
         new SearchRequest(p, this, this.getApplicationContext()).execute();
     }

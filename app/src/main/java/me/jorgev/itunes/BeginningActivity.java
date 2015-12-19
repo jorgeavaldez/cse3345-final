@@ -58,6 +58,8 @@ public class BeginningActivity extends AppCompatActivity {
 
     // TODO: Implement the Past Searches view activity.
     public void onPastSearches(View target) {
+        Intent intent = new Intent(this, RecentsActivity.class);
 
+        startActivity(intent);
     }
 }

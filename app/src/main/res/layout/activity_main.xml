@@ -13,14 +13,12 @@
     android:weightSum="1">
 
 
-    <EditText
+    <AutoCompleteTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/query_box"
         android:hint="@string/query_box_hint"
-        android:onClick="onSearchButton"
-        android:gravity="center_horizontal"
-        android:layout_alignParentStart="false" />
+        android:gravity="center_horizontal" />
 
 
     <LinearLayout
