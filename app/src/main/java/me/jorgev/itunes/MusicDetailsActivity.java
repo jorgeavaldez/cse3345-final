@@ -51,9 +51,18 @@ public class MusicDetailsActivity extends AppCompatActivity {
         bviewPrice.setText("$" + b.getTrackPrice());
         bviewAlbum.setText("Album: " + b.getCollectionName());
         bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
+
+        if (b.getWrapperType().equals("collection")) {
+            bviewTitle.setText(b.getCollectionName());
+
+            bartistTitle.setText("Artist: " + b.getArtistName());
+            bviewPrice.setText("$" + b.getCollectionPrice());
+            bviewAlbum.setText(" ");
+            bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
+        }
     }
 
-    protected void onBack(View target) {
+    public void onBack(View target) {
         finish();
     }
 }

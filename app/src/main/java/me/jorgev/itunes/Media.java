@@ -10,6 +10,7 @@ import hugo.weaving.DebugLog;
 public class Media {
     private String wrapperType;
     private String trackExplicitness;
+    private String collectionExplicitness;
     private String kind;
     private String trackName;
     private String artistName;
@@ -19,6 +20,7 @@ public class Media {
     private String previewUrl;
     private String trackTimeMillis;
     private String trackPrice;
+    private String collectionPrice;
     private String ratingIndex;
     private String primaryGenreName;
     private String artworkUrl100;
@@ -48,8 +50,9 @@ public class Media {
     @DebugLog
     public Media(String wrapperType, String trackExplicitness, String kind, String trackName,
                  String artistName, String collectionName, String censoredName, String viewURL,
-                 String previewUrl, String trackTimeMillis, String trackPrice, String ratingIndex,
-                 String primaryGenreName, String artworkUrl100) {
+                 String previewUrl, String trackTimeMillis, String trackPrice, String collectionPrice,
+                 String ratingIndex, String primaryGenreName, String artworkUrl100,
+                 String collectionExplicitness) {
         this.wrapperType = wrapperType;
         this.trackExplicitness = trackExplicitness;
         this.kind = kind;
@@ -61,9 +64,11 @@ public class Media {
         this.previewUrl = previewUrl;
         this.trackTimeMillis = trackTimeMillis;
         this.trackPrice = trackPrice;
+        this.collectionPrice = collectionPrice;
         this.ratingIndex = ratingIndex;
         this.primaryGenreName = primaryGenreName;
         this.artworkUrl100 = artworkUrl100;
+        this.collectionExplicitness = collectionExplicitness;
     }
 
     /**
@@ -214,6 +219,14 @@ public class Media {
         this.trackPrice = trackPrice;
     }
 
+    public String getCollectionPrice() {
+        return this.collectionPrice;
+    }
+
+    public void setCollectionPrice(String collectionPrice) {
+        this.collectionPrice = collectionPrice;
+    }
+
     public String getRatingIndex() {
         return this.ratingIndex;
     }
@@ -236,5 +249,13 @@ public class Media {
 
     public void setArtworkUrl100(String artworkUrl100) {
         this.artworkUrl100 = artworkUrl100;
+    }
+
+    public String getCollectionExplicitness() {
+        return collectionExplicitness;
+    }
+
+    public void setCollectionExplicitness(String collectionExplicitness) {
+        this.collectionExplicitness = collectionExplicitness;
     }
 }
