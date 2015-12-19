@@ -93,10 +93,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Preview"
-            android:id="@+id/button16"
+            android:id="@+id/preview_button"
             android:background="@drawable/drawables"
             android:layout_below="@+id/picture_music"
-            android:layout_alignParentStart="true" />
+            android:layout_alignEnd="@+id/favorites_button"
+            android:layout_alignStart="@+id/favorites_button" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Add to Favorites"
+            android:id="@+id/favorites_button"
+            android:background="@drawable/drawables"
+            android:layout_below="@+id/preview_button"
+            android:layout_centerHorizontal="true" />
+
 
 
     </RelativeLayout>
