@@ -66,7 +66,7 @@
         <Button android:id="@+id/backButton" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_weight="0.06"
             android:text="back"
-            android:onClick=""
+            android:onClick="onBack"
             android:background="@drawable/drawables"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"

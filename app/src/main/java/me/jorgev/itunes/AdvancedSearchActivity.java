@@ -35,6 +35,10 @@ public class AdvancedSearchActivity extends AppCompatActivity {
             res = "entity,song";
         }
 
+        else if (checkedId == R.id.advanced_video_button) {
+            res = "entity,musicVideo";
+        }
+
         else {
             res = "";
             resCode = 0;

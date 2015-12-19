@@ -24,6 +24,7 @@ public class Media {
     private String ratingIndex;
     private String primaryGenreName;
     private String artworkUrl100;
+    private String artistLinkUrl;
 
     /**
      * No args constructor for use in serialization
@@ -46,13 +47,14 @@ public class Media {
      * @param primaryGenreName
      * @param trackPrice
      * @param artworkUrl100
+     * @param artistLinkUrl
      */
     @DebugLog
     public Media(String wrapperType, String trackExplicitness, String kind, String trackName,
                  String artistName, String collectionName, String censoredName, String viewURL,
                  String previewUrl, String trackTimeMillis, String trackPrice, String collectionPrice,
                  String ratingIndex, String primaryGenreName, String artworkUrl100,
-                 String collectionExplicitness) {
+                 String collectionExplicitness, String artistLinkUrl) {
         this.wrapperType = wrapperType;
         this.trackExplicitness = trackExplicitness;
         this.kind = kind;
@@ -69,6 +71,7 @@ public class Media {
         this.primaryGenreName = primaryGenreName;
         this.artworkUrl100 = artworkUrl100;
         this.collectionExplicitness = collectionExplicitness;
+        this.artistLinkUrl = artistLinkUrl;
     }
 
     /**
@@ -257,5 +260,13 @@ public class Media {
 
     public void setCollectionExplicitness(String collectionExplicitness) {
         this.collectionExplicitness = collectionExplicitness;
+    }
+
+    public String getArtistLinkUrl() {
+        return artistLinkUrl;
+    }
+
+    public void setArtistLinkUrl(String artistLinkUrl) {
+        this.artistLinkUrl = artistLinkUrl;
     }
 }

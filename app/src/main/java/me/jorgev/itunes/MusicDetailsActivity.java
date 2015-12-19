@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -60,8 +61,20 @@ public class MusicDetailsActivity extends AppCompatActivity {
 
             bartistTitle.setText("Artist: " + b.getArtistName());
             bviewPrice.setText("$" + b.getCollectionPrice());
-            ((RelativeLayout)findViewById(R.id.details_root)).removeView(bviewAlbum);
+            ((LinearLayout)findViewById(R.id.media_info_root)).removeView(bviewAlbum);
             bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
+            ((LinearLayout)findViewById(R.id.media_info_root))
+                    .removeView(findViewById(R.id.preview_button));
+
+        }
+
+        else if (b.getWrapperType().equals("artist")) {
+            bviewTitle.setText(b.getArtistName());
+            bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
+            bviewAlbum.setText(b.getArtistLinkUrl());
+            ((LinearLayout)findViewById(R.id.media_info_root)).removeView(bviewPrice);
+            ((LinearLayout)findViewById(R.id.media_info_root))
+                    .removeView(findViewById(R.id.preview_button));
         }
     }
 
