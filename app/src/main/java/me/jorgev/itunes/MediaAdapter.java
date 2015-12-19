@@ -28,6 +28,8 @@ public class MediaAdapter extends ArrayAdapter<Media> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.one_item, parent, false);
         }
 
+
+
         TextView tTitle = (TextView) convertView.findViewById(R.id.super_item_title);
         TextView tArtist = (TextView) convertView.findViewById(R.id.super_item_artist);
         TextView tExplicit = (TextView) convertView.findViewById(R.id.super_item_explicit);
@@ -36,7 +38,21 @@ public class MediaAdapter extends ArrayAdapter<Media> {
         tTitle.setText(b.getTrackName());
         tArtist.setText(b.getArtistName());
         //tExplicit.setText(b.getTrackExplicitness());
-        tType.setText(b.getTrackExplicitness());
+        tType.setText(b.getPrimaryGenreName());
+
+        if (b.getTrackExplicitness() != null && !(b.getTrackExplicitness().equals("explicit"))) {
+            tExplicit.setText(" ");
+        }
+
+        if (b.getWrapperType().equals("collection")) {
+            tTitle.setText(b.getCollectionName());
+            tArtist.setText(b.getArtistName());
+            tType.setText(b.getPrimaryGenreName());
+
+            if (b.getCollectionExplicitness() != null && !(b.getCollectionExplicitness().equals("explicit"))) {
+                tExplicit.setText(" ");
+            }
+        }
 
         // Return the completed view to render on screen
         return convertView;
