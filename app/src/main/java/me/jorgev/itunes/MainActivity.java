@@ -96,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
         new SearchRequest(p, this, this.getApplicationContext()).execute();
     }
 
+    @DebugLog
+    public void onBack(View target) {
+        finish();
+    }
+
     // This function is the callback for when the advanced search options button is called.
     // It should inflate the 'advanced_search' layout under the buttons and all that jazz.
 //    @DebugLog

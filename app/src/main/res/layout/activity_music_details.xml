@@ -5,6 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/details_root"
         android:layout_height="match_parent">
 
         <TextView
@@ -73,6 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Back"
             android:id="@+id/button13"
+            android:onClick="onBack"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:background="@drawable/drawables"

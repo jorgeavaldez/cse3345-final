@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -45,19 +46,21 @@ public class MusicDetailsActivity extends AppCompatActivity {
         TextView bviewAlbum = (TextView)findViewById(R.id.album_music);
         TextView bviewGenre = (TextView)findViewById(R.id.genre_music);
 
-        bviewTitle.setText(b.getTrackName());
+        if (b.getWrapperType().equals("track")) {
+            bviewTitle.setText(b.getTrackName());
 
-        bartistTitle.setText("Artist: " + b.getArtistName());
-        bviewPrice.setText("$" + b.getTrackPrice());
-        bviewAlbum.setText("Album: " + b.getCollectionName());
-        bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
+            bartistTitle.setText("Artist: " + b.getArtistName());
+            bviewPrice.setText("$" + b.getTrackPrice());
+            bviewAlbum.setText("Album: " + b.getCollectionName());
+            bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
+        }
 
-        if (b.getWrapperType().equals("collection")) {
+        else if (b.getWrapperType().equals("collection")) {
             bviewTitle.setText(b.getCollectionName());
 
             bartistTitle.setText("Artist: " + b.getArtistName());
             bviewPrice.setText("$" + b.getCollectionPrice());
-            bviewAlbum.setText(" ");
+            ((RelativeLayout)findViewById(R.id.details_root)).removeView(bviewAlbum);
             bviewGenre.setText("Genre: " + b.getPrimaryGenreName());
         }
     }
