@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:id="@+id/button10"
+        android:onClick="onBack"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:background="@drawable/drawables"

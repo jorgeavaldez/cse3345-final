@@ -60,6 +60,7 @@
             android:layout_height="wrap_content"
             android:text="Favorites"
             android:id="@+id/button8"
+            android:onClick="onFavorites"
             android:background="@drawable/drawables"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true" />

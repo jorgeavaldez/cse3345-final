@@ -7,6 +7,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="Literally Everything"
-        android:id="@+id/textView" />
+        android:id="@+id/favorite_text_view"
+        android:textColor="#000000" />
 
 </LinearLayout>
