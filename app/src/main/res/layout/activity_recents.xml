@@ -13,6 +13,7 @@
         android:layout_marginTop="95dp"
         android:background="@drawable/drawables"
         android:layout_below="@+id/textView2"
+        android:onClick="onClickBtn1"
         android:layout_alignEnd="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
 
@@ -25,6 +26,7 @@
         android:layout_below="@+id/button"
         android:background="@drawable/drawables"
         android:layout_alignEnd="@+id/button"
+        android:onClick="onClickBtn2"
         android:layout_alignStart="@+id/button" />
 
     <Button
@@ -35,6 +37,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button2"
         android:background="@drawable/drawables"
+        android:onClick="onClickBtn3"
         android:layout_alignStart="@+id/button2"
         android:layout_alignEnd="@+id/button2" />
 
@@ -45,6 +48,7 @@
         android:id="@+id/button4"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button3"
+        android:onClick="onClickBtn4"
         android:background="@drawable/drawables"
         android:layout_alignStart="@+id/button3"
         android:layout_alignEnd="@+id/button3" />
@@ -56,6 +60,7 @@
         android:id="@+id/button5"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/button4"
+        android:onClick="onClickBtn5"
         android:background="@drawable/drawables"
         android:layout_alignStart="@+id/button4"
         android:layout_alignEnd="@+id/button4" />
@@ -77,6 +82,7 @@
         android:text="Back"
         android:id="@+id/button11"
         android:background="@drawable/drawables"
+        android:onClick="onBack"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />

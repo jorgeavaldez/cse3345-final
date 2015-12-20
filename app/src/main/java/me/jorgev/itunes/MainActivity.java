@@ -107,6 +107,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         queryBox.setAdapter(queryBoxAdapter);
+
+        if (intent.hasExtra("FROM_RECENTS")) {
+            String recent = intent.getStringExtra("FROM_RECENTS");
+
+            this.query = recent;
+
+            this.filterType = this.sharedPreferences.getString(this.query, "");
+
+            if (!this.filterType.equals("") && !this.filterType.contains(",")) {
+                this.filterType = "entity," + this.filterType;
+            }
+
+            onSearchButton(findViewById(R.id.main_layout));
+        }
     }
 
 //    @DebugLog

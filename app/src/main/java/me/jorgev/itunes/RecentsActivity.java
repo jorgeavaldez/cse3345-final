@@ -1,6 +1,7 @@
 package me.jorgev.itunes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -53,99 +54,58 @@ public class RecentsActivity extends AppCompatActivity {
     }
 
     public void onClickBtn1(View target) {
-        HashMap<String, String> p = new HashMap<>();
         Button button = ((Button) findViewById(R.id.button));
 
         String q = button.getText().toString();
-        String filterType = this.preferences.getString(q, null);
 
-        if (filterType != null) {
-            p.put("entity", filterType);
-        }
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("FROM_RECENTS", q);
 
-        p.put("term", q);
-        p.put("media", "music");
-
-        Log.d("recents click", q);
-
-        new SearchRequest(p, this, this.getApplicationContext()).execute();
+        startActivity(intent);
     }
 
     public void onClickBtn2(View target) {
-        HashMap<String, String> p = new HashMap<>();
         Button button2 = ((Button) findViewById(R.id.button2));
 
         String q = button2.getText().toString();
-        String filterType = this.preferences.getString(q, null);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("FROM_RECENTS", q);
 
-        if (filterType != null) {
-            p.put("entity", filterType);
-        }
-
-        p.put("term", q);
-        p.put("media", "music");
-
-        Log.d("recents click", q);
-
-        new SearchRequest(p, this, this.getApplicationContext()).execute();
+        startActivity(intent);
     }
 
     public void onClickBtn3(View target) {
-        HashMap<String, String> p = new HashMap<>();
         Button button3 = ((Button) findViewById(R.id.button3));
 
         String q = button3.getText().toString();
-        String filterType = this.preferences.getString(q, null);
 
-        if (filterType != null) {
-            p.put("entity", filterType);
-        }
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("FROM_RECENTS", q);
 
-        p.put("term", q);
-        p.put("media", "music");
+        startActivity(intent);
 
-        Log.d("recents click", q);
-
-        new SearchRequest(p, this, this.getApplicationContext()).execute();
     }
 
     public void onClickBtn4(View target) {
-        HashMap<String, String> p = new HashMap<>();
         Button button4 = ((Button) findViewById(R.id.button4));
 
         String q = button4.getText().toString();
-        String filterType = this.preferences.getString(q, null);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("FROM_RECENTS", q);
 
-        if (filterType != null) {
-            p.put("entity", filterType);
-        }
-
-        p.put("term", q);
-        p.put("media", "music");
-
-        Log.d("recents click", q);
-
-        new SearchRequest(p, this, this.getApplicationContext()).execute();
+        startActivity(intent);
     }
 
     public void onClickBtn5(View target) {
-        HashMap<String, String> p = new HashMap<>();
         Button button5 = ((Button) findViewById(R.id.button5));
 
         String q = button5.getText().toString();
-        String filterType = this.preferences.getString(q, null);
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("FROM_RECENTS", q);
 
-        if (filterType != null) {
-            p.put("entity", filterType);
-        }
-
-        p.put("term", q);
-        p.put("media", "music");
-
-        Log.d("recents click", q);
-
-        new SearchRequest(p, this, this.getApplicationContext()).execute();
+        startActivity(intent);
     }
+
 
     @DebugLog
     public void onBack(View target) {
